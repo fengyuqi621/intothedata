@@ -1,16 +1,29 @@
 
 Steps: 
 1. Data cleaning: 
-a. English Speaker (engnat): Ineffective data filter— both creators are non-native English speakers yet we can complete the questionnaire without friction. Hence drop column engnat 
-b. Drop time and position column: drop.Q#I and E
-c. Validity test: Create a new column call VCLT, that record the sum of VCL 1 - 16. Drop any row VCLT < 10 
-d. Drop column screen size 
-f. uniquenetworkloaction: due to data clarity we are dropping this column as this column does not consider students from the same organization or institute.
-g:  Drop introelapse and surveyelapse 
+    a. English Speaker (engnat): Ineffective data filter— both creators are non-native English speakers
+        yet we can complete the questionnaire without friction. Hence drop column engnat 
 
-h: Match scale: (http://thetwigcentre.co.nz/wp-content/uploads/2011/05/dass42-questionnaire.pdf) Since we are using this score sheet we are matching the current dataset score to the score sheet. 
-i: Create three new column call D score (Depression), A score (Anxiety), S score (Stress). Sum the corresponding column. 
-j: Export data to a new CSV file call s_dassdata.csv
+    b. Drop time and position column: drop.Q#I and E
+
+    c. Validity test: Create a new column call VCLT, that record the sum of VCL 1 - 16.
+        Drop any row VCLT < 10 
+
+    d. Drop column screen size 
+
+    f. uniquenetworkloaction: due to data clarity we are dropping this column as this 
+        column does not consider students from the same organization or institute.
+
+    g:  Drop introelapse and surveyelapse 
+
+    h: Match scale: (http://thetwigcentre.co.nz/wp-content/uploads/2011/05/dass42-questionnaire.pdf) Since we are using this score sheet 
+        we are matching the current dataset score to the score sheet. 
+
+    i: Create three new column call D score (Depression), A score (Anxiety), S score (Stress). 
+        Sum the corresponding column. 
+
+    j: Export data to a new CSV file call s_dassdata.csv
 
 ---------------
 
+2. Question we want to ask
