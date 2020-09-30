@@ -14,7 +14,7 @@ fields = ["Q1A","Q1I","Q1E","Q2A","Q2I","Q2E","Q3A","Q3I","Q3E","Q4A","Q4I","Q4E
 # Explanation for the parameters
 # skiprows:  skip the number of rows at the start of the csv file. In this case, we want to skip the 1st row (the header)
 #            since the headers aren't separated properly (it caused our data to be stored in 1 column). 
-# engine: specify which engine we're using to parse the csv file. In this case, we're using python instead of r. 
+# engine: specify which engine we're using to parse the csv file. In this case, we're using python instead of c. 
 # header: specify if the input csv contains a header (If so, which row). In this case, as we decide to skip the 1st row, 
 #         we will need to set our header to None
 # names: indicates all the column names we want to use 
