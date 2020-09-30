@@ -20,10 +20,53 @@ Steps:
         we are matching the current dataset score to the score sheet. 
 
     i: Create three new column call D score (Depression), A score (Anxiety), S score (Stress). 
-        Sum the corresponding column. 
+        Sum the corresponding column. (Score have different severity please refer to the pdf)
 
-    j: Export data to a new CSV file call s_dassdata.csv
+    k: Export data to a new CSV file call s_dassdata.csv
 
 ---------------
 
 2. Question we want to ask
+
+Macro: 
+    a. What is the general trend? 
+        a.1 Are people generally depressed anxious or stressed? (Serveity from Mild to extreme)
+        a.2 What is the severity of each category 
+
+    b. Are people only affected by one category or several? 
+
+    c. Does generder effect ppl's DASS score?
+        c.1 Does gender influence people's depression score 
+        c.2 Does gender influence people's anxiety score 
+        c.3 Does gender influence people's stress score 
+
+    d. What is the corrlation between age and DASS score?
+        d.1 What age group are more depressed? 
+        d.2 What age group are more anxious?
+        d.3 what age group are more stressed? 
+        d.4 what about the severity? 
+
+    e. Geo-location and the corrlation of ppl's DASS score?
+
+
+Micro: 
+    a. What is the corrlation between ppl's education and their DAS score 
+
+    b. What is the corrlation between ppl's hand choice and their DAS score
+
+    c. What is the corrlation between ppl's religion and their DAS score  
+
+    d. What is the corrlation between ppl's sexual orientation and their DAS score 
+
+    e. What is the corrlation between ppl's race and their DAS score   
+
+    f. What is the corrlation between ppl's voted and their DAS score  
+
+    g. What is the corrlation between ppl's martial status and their DAS score  
+
+    h. What is the corrlation between ppl's family size and their DAS score  
+
+    i. What is the corrlation between ppl's major and their DAS score 
+
+    j.  Are people searching on google tend to have higher DAS score? 
+
