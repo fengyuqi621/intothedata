@@ -21,9 +21,24 @@ fields = ["Q1A","Q1I","Q1E","Q2A","Q2I","Q2E","Q3A","Q3I","Q3E","Q4A","Q4I","Q4E
 # sep:  what delimiter separates the column.  in this case, we used the comma delimiter in our csv file
 # more parameter info can be found here: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html
 # Yuqi
-file = pd.read_csv('/Users/fengyuqi/Desktop/intothedata/dass_test/data/dass_data.csv', sep=',', skiprows=1, header=None, engine='python', names=fields)
+#file = pd.read_csv('/Users/fengyuqi/Desktop/intothedata/dass_test/data/dass_data.csv', sep=',', skiprows=1, header=None, engine='python', names=fields)
 
 # Ian (use the following absolute path to read in the csv & comment the above line of code)
-# file = pd.read_csv('/Users/ianyu/Desktop/intothedata/dass_test/data/dass_data.csv', sep=',', skiprows=1, header=None, engine='python', names=fields)
 
-print(file)
+
+def drop_rows (df):
+
+
+
+    
+def main():
+    df = pd.read_csv('/Users/ianyu/Desktop/intothedata/dass_test/data/dass_data.csv', 
+    sep=',', skiprows=1, header=None, engine='python', names=fields)
+    sns.set()
+
+    drop_rows(df)
+
+
+
+if __name__ == '__main__':
+    main()
