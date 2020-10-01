@@ -38,13 +38,9 @@ def drop_rows (df):
     df['DScore'] = df['Q3A'] + df['Q24A'] + df['Q5A'] + df['Q26A'] + df['Q10A'] + df['Q31A'] + df['Q13A'] + df['Q34A'] + df['Q16A'] + df['Q17A'] + df['Q37A'] + df['Q38A'] + df['Q21A'] + df['Q42A'] - 14
     df['AScore'] = df['Q2A'] + df['Q23A'] + df['Q4A'] + df['Q25A'] + df['Q7A'] + df['Q28A'] + df['Q9A'] + df['Q30A'] + df['Q15A'] + df['Q36A'] + df['Q19A'] + df['Q40A'] + df['Q20A'] + df['Q41A'] - 14
     df['SScore'] = df['Q1A'] + df['Q22A'] + df['Q6A'] + df['Q27A'] + df['Q8A'] + df['Q29A'] + df['Q11A'] + df['Q32A'] + df['Q12A'] + df['Q33A'] + df['Q14A'] + df['Q35A'] + df['Q18A'] + df['Q39A'] - 14
-    score = df[df['DScore'] > 20]
-     
-    return score
-    # for each_vcl in vcl_list:
-    #     sum_vcl =  sum_vcl + df[each_vcl]
-    # df['VCLTotal'] = sum_vcl
-    # print(df['VCLTotal'])
+    # score = df[df['DScore'] > 20]
+    return df
+
 
 
 def main():
@@ -58,14 +54,14 @@ def main():
 "TIPI1","TIPI2","TIPI3","TIPI4","TIPI5","TIPI6","TIPI7","TIPI8","TIPI9","TIPI10","VCL1","VCL2","VCL3","VCL4","VCL5","VCL6","VCL7","VCL8",
 "VCL9","VCL10","VCL11","VCL12","VCL13","VCL14","VCL15","VCL16","education","urban","gender","engnat","age","screensize",
 "uniquenetworklocation","hand","religion","orientation","race","voted","married","familysize","major"]
-    df = pd.read_csv('/Users/ianyu/Desktop/intothedata/dass_test/data/dass_data.csv', 
-    sep=',', skiprows=1, header=None, engine='python', names=fields)
+    df = pd.read_csv('dass_test/data/dass_data.csv', sep=',', skiprows=1, header=None, engine='python', names=fields)
 
     cleaned_table = drop_columns(df)
    
     final = drop_rows(cleaned_table)
    
-    # cleaned_data = drop_rows(cleaned_table)
+    print(final)
+    final.to_csv('dass_test/data/cleaned_data.csv', index=False)
 
 if __name__ == '__main__':
     main()
