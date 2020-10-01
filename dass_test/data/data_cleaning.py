@@ -33,9 +33,11 @@ def drop_rows (df):
     # Step 2: Eliminate the rows that do not pass the validity check
     # Step 2.1: Select all the columns that contain the string "VCL"
     vcl_list = df.columns[df.columns.str.contains(pat = 'VCL')].tolist()
-    df['VClT'] = df['VCL1'] + df['VCL2'] + df['VCL3'] + df['VCL4'] + df['VCL5'] + df['VCL6'] +df['VCL7'] + df['VCL8'] + df['VCL9'] + df['VCL10'] + df['VCL11'] + df['VCL12'] + df['VCL13'] + df['VCL14'] + df['VCL15'] + df['VCL16'] 
-    df_filtered = df[df['VClT'] >= 5]
-    return df_filtered
+    df['VCLT'] = df['VCL1'] + df['VCL2'] + df['VCL3'] + df['VCL4'] + df['VCL5'] + df['VCL6'] +df['VCL7'] + df['VCL8'] + df['VCL9'] + df['VCL10'] + df['VCL11'] + df['VCL12'] + df['VCL13'] + df['VCL14'] + df['VCL15'] + df['VCL16'] 
+    df_filtered = df[df['VCLT'] >= 5]
+
+    df = df_filtered.drop(df_filtered.filter(regex='VCL').columns, axis=1)  
+    return df
     # for each_vcl in vcl_list:
     #     sum_vcl =  sum_vcl + df[each_vcl]
     # df['VCLTotal'] = sum_vcl
