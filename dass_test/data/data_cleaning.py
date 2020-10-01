@@ -35,7 +35,7 @@ def drop_rows (df):
     df_filtered = df[df['VCLT'] >= 5]
     df = df_filtered.drop(df_filtered.filter(regex='VCL').columns, axis=1) 
 
-    df['DScore'] = df['Q3A'] + df['Q24A'] + df['Q5A'] + df['Q26A'] + df['Q10A'] + df['Q31A'] + df['Q13A'] + df['Q34A'] + df['Q16A'] + df['Q17A'] + df['Q37A'] + df['Q38A'] + df['Q21A'] + df['Q42A'] - 15
+    df['DScore'] = df['Q3A'] + df['Q24A'] + df['Q5A'] + df['Q26A'] + df['Q10A'] + df['Q31A'] + df['Q13A'] + df['Q34A'] + df['Q16A'] + df['Q17A'] + df['Q37A'] + df['Q38A'] + df['Q21A'] + df['Q42A'] - 14
     df['AScore'] = df['Q2A'] + df['Q23A'] + df['Q4A'] + df['Q25A'] + df['Q7A'] + df['Q28A'] + df['Q9A'] + df['Q30A'] + df['Q15A'] + df['Q36A'] + df['Q19A'] + df['Q40A'] + df['Q20A'] + df['Q41A'] - 14
     df['SScore'] = df['Q1A'] + df['Q22A'] + df['Q6A'] + df['Q27A'] + df['Q8A'] + df['Q29A'] + df['Q11A'] + df['Q32A'] + df['Q12A'] + df['Q33A'] + df['Q14A'] + df['Q35A'] + df['Q18A'] + df['Q39A'] - 14
     score = df[df['DScore'] > 20]
@@ -64,7 +64,7 @@ def main():
     cleaned_table = drop_columns(df)
    
     final = drop_rows(cleaned_table)
-    print (final)
+   
     # cleaned_data = drop_rows(cleaned_table)
 
 if __name__ == '__main__':
