@@ -1,7 +1,6 @@
 import pandas as pd
 
 
-
 # Explanation for the parameters
 # skiprows:  skip the number of rows at the start of the csv file. In this case, we want to skip the 1st row (the header)
 #            since the headers aren't separated properly (it caused our data to be stored in 1 column). 
@@ -32,12 +31,16 @@ def drop_columns (df):
 def drop_rows (df):
     # Step 2: Eliminate the rows that do not pass the validity check
     # Step 2.1: Select all the columns that contain the string "VCL"
-    vcl_list = df.columns[df.columns.str.contains(pat = 'VCL')].tolist()
     df['VCLT'] = df['VCL1'] + df['VCL2'] + df['VCL3'] + df['VCL4'] + df['VCL5'] + df['VCL6'] +df['VCL7'] + df['VCL8'] + df['VCL9'] + df['VCL10'] + df['VCL11'] + df['VCL12'] + df['VCL13'] + df['VCL14'] + df['VCL15'] + df['VCL16'] 
     df_filtered = df[df['VCLT'] >= 5]
+    df = df_filtered.drop(df_filtered.filter(regex='VCL').columns, axis=1) 
 
-    df = df_filtered.drop(df_filtered.filter(regex='VCL').columns, axis=1)  
-    return df
+    df['DScore'] = df['Q3A'] + df['Q24A'] + df['Q5A'] + df['Q26A'] + df['Q10A'] + df['Q31A'] + df['Q13A'] + df['Q34A'] + df['Q16A'] + df['Q17A'] + df['Q37A'] + df['Q38A'] + df['Q21A'] + df['Q42A'] - 15
+    df['AScore'] = df['Q2A'] + df['Q23A'] + df['Q4A'] + df['Q25A'] + df['Q7A'] + df['Q28A'] + df['Q9A'] + df['Q30A'] + df['Q15A'] + df['Q36A'] + df['Q19A'] + df['Q40A'] + df['Q20A'] + df['Q41A'] - 14
+    df['SScore'] = df['Q1A'] + df['Q22A'] + df['Q6A'] + df['Q27A'] + df['Q8A'] + df['Q29A'] + df['Q11A'] + df['Q32A'] + df['Q12A'] + df['Q33A'] + df['Q14A'] + df['Q35A'] + df['Q18A'] + df['Q39A'] - 14
+    score = df[df['DScore'] > 20]
+     
+    return score
     # for each_vcl in vcl_list:
     #     sum_vcl =  sum_vcl + df[each_vcl]
     # df['VCLTotal'] = sum_vcl
