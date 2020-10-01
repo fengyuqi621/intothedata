@@ -33,6 +33,9 @@ def drop_rows (df):
     # Step 2: Eliminate the rows that do not pass the validity check
     # Step 2.1: Select all the columns that contain the string "VCL"
     vcl_list = df.columns[df.columns.str.contains(pat = 'VCL')].tolist()
+    df['VClT'] = df['VCL1'] + df['VCL2'] + df['VCL3'] + df['VCL4'] + df['VCL5'] + df['VCL6'] +df['VCL7'] + df['VCL8'] + df['VCL9'] + df['VCL10'] + df['VCL11'] + df['VCL12'] + df['VCL13'] + df['VCL14'] + df['VCL15'] + df['VCL16'] 
+    df_filtered = df[df['VClT'] >= 5]
+    return df_filtered
     # for each_vcl in vcl_list:
     #     sum_vcl =  sum_vcl + df[each_vcl]
     # df['VCLTotal'] = sum_vcl
@@ -50,12 +53,13 @@ def main():
 "TIPI1","TIPI2","TIPI3","TIPI4","TIPI5","TIPI6","TIPI7","TIPI8","TIPI9","TIPI10","VCL1","VCL2","VCL3","VCL4","VCL5","VCL6","VCL7","VCL8",
 "VCL9","VCL10","VCL11","VCL12","VCL13","VCL14","VCL15","VCL16","education","urban","gender","engnat","age","screensize",
 "uniquenetworklocation","hand","religion","orientation","race","voted","married","familysize","major"]
-    df = pd.read_csv('/Users/fengyuqi/Desktop/intothedata/dass_test/data/dass_data.csv', 
+    df = pd.read_csv('/Users/ianyu/Desktop/intothedata/dass_test/data/dass_data.csv', 
     sep=',', skiprows=1, header=None, engine='python', names=fields)
 
     cleaned_table = drop_columns(df)
    
-    drop_rows(df)
+    final = drop_rows(cleaned_table)
+    print (final)
     # cleaned_data = drop_rows(cleaned_table)
 
 if __name__ == '__main__':
