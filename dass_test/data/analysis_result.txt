@@ -1,0 +1,23 @@
+Num of male: 7709
+Num of female: 24787
+Num of other gender: 523
+
+Average score of all
+DScore    20.174720 moderate
+AScore    15.859057 severe
+SScore    21.151436 moderate
+
+Average score of male
+DScore    19.448048 moderate
+AScore    13.220781 moderate
+SScore    18.605267 moderate
+
+Average score of female
+DScore    20.269254 moderate
+AScore    16.582321 severe
+SScore    21.857869 moderate
+
+Average score of other gender
+DScore    26.365201 severe
+AScore    20.525813  extremely severe
+SScore    25.304015  moderate
