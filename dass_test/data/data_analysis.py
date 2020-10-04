@@ -15,7 +15,6 @@ def gender_average(df):
     print(das_mean_female)
     print(das_mean_other)
 
-
 def age_average(df):
     teen_list = df[(df['age'] <= 17) & (df['age'] >=12)]
     young_adult_list = df[(df['age'] <=25) & (df['age'] >=18)]
@@ -72,7 +71,34 @@ def anxiety_severity(df):
     print("Percentage of moderate anxiety: " + str(moderate_a.size / df.size * 100) + "%")
     print("Percentage of severe anxiety: " + str(severe_a.size / df.size * 100) + "%")
     print("Percentage of extreme severe anxiety: " + str(ex_severe_a.size / df.size * 100) + "%")
+    
+def geolocation(df):
+   # pd.set_option("display.max_rows", None, "display.max_columns", None)
+    country_sl = df.groupby("country")["DScore", "AScore", "SScore"].mean()
+    country_sl['Count'] = df.groupby("country").size()
+    country_sl_sort = country_sl.sort_values(by= ['Count','DScore'], ascending=False)
+    print(country_sl_sort)
 
+
+def education(df):
+    education_l = df.groupby("education")["DScore", "AScore", "SScore"].mean()
+    education_l['Count'] = df.groupby("education").size()
+
+    edl_sort = education_l.sort_values(by= ['Count','DScore'], ascending=False)
+    print(edl_sort)
+
+def religion(df): 
+    relig_l = df.groupby("religion")["DScore", "AScore", "SScore"].mean()
+    relig_l['Count'] = df.groupby("religion").size()
+
+    relig_sort = relig_l.sort_values(by= ['Count','DScore'], ascending=False)
+    print(relig_sort)
+
+def hand(df):
+    hand_l = df.groupby("hand")["DScore", "AScore", "SScore"].mean()
+    hand_l['Count'] = df.groupby('hand').size() 
+    hand_sort = hand_l.sort_values(by= ['Count','DScore'], ascending=False)
+    print(hand_sort)
 
 def stress_severity(df):
     # normal stress
@@ -94,14 +120,18 @@ def stress_severity(df):
 
 def main():
     df = pd.read_csv('dass_test/data/cleaned_data.csv')
- 
-    # gender_average(df)
-    # age_average(df)
-    # depression_severity(df)
-    # anxiety_severity(df)
-    # stress_severity(df)
     
-    
+    gender_average(df)
+    age_average(df)
+
+    depression_severity(df)
+    anxiety_severity(df)
+    stress_severity(df)
+
+    geolocation(df)
+    education(df)
+    religion(df)
+    hand(df)
 
 
 if __name__ == '__main__':
