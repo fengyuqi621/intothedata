@@ -2,25 +2,27 @@ Num of male: 7709
 Num of female: 24787
 Num of other gender: 523
 
-Average score of all
-DScore    20.174720 moderate
-AScore    15.859057 severe
-SScore    21.151436 moderate
 
-Average score of male
-DScore    20.446938 moderate
-AScore    13.217696 moderate
-SScore    18.603269 moderate
+## Gender ##
+Unselected - 51
+DScore: 21.588235
+AScore: 15.274510  
+SScore: 20.098039
 
-Average score of female
-DScore    21.268934 severe
-AScore    16.582657 severe
-SScore    21.857927 moderate
+Male - 7709
+DScore: 20.448048
+AScore: 13.220781
+SScore: 18.605267
 
-Average score of other gender
-DScore    27.365201 severe
-AScore    20.525813 extremely severe
-SScore    25.304015 moderate
+Female - 24787
+DScore: 21.269254
+AScore: 16.582321
+SScore: 21.857869
+
+Other Gender - 523
+DScore: 27.365201
+AScore: 20.525813
+SScore: 25.304015
 
 
 Percentage of normal depression: 21.97%

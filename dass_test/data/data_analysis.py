@@ -2,18 +2,9 @@ import pandas as pd
 
 # calculates the avg score of DScore, AScore, and SScore based on different gender
 def gender_average(df):
-    das_mean = df[["DScore", "AScore", "SScore"]].mean()
-    male_list = df[df['gender'] == 1]
-    female_list = df[df['gender'] == 2]
-    other_gender = df[df['gender'] == 3]
-    # calculate 
-    das_mean_male = male_list[["DScore", "AScore", "SScore"]].mean()
-    das_mean_female = female_list[["DScore", "AScore", "SScore"]].mean()
-    das_mean_other = other_gender[["DScore", "AScore", "SScore"]].mean()
-
-    print(das_mean_male)
-    print(das_mean_female)
-    print(das_mean_other)
+    gender_avg = df.groupby("gender")["DScore", "AScore", "SScore"].mean()
+    gender_avg['Count'] = df.groupby("gender").size()
+    print(gender_avg)
 
 def age_average(df):
     teen_list = df[(df['age'] <= 17) & (df['age'] >=12)]
