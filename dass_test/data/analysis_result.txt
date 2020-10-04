@@ -8,16 +8,35 @@ AScore    15.859057 severe
 SScore    21.151436 moderate
 
 Average score of male
-DScore    19.448048 moderate
-AScore    13.220781 moderate
-SScore    18.605267 moderate
+DScore    20.446938 moderate
+AScore    13.217696 moderate
+SScore    18.603269 moderate
 
 Average score of female
-DScore    20.269254 moderate
-AScore    16.582321 severe
-SScore    21.857869 moderate
+DScore    21.268934 severe
+AScore    16.582657 severe
+SScore    21.857927 moderate
 
 Average score of other gender
-DScore    26.365201 severe
-AScore    20.525813  extremely severe
-SScore    25.304015  moderate
+DScore    27.365201 severe
+AScore    20.525813 extremely severe
+SScore    25.304015 moderate
+
+
+Percentage of normal depression: 21.97%
+Percentage of mild depression: 9.35%
+Percentage of moderate depression: 17.77%
+Percentage of severe depression: 16.39%
+Percentage of extreme severe depression: 34.53%
+
+Percentage of normal anxiety: 25.16%
+Percentage of mild anxiety: 6.92%
+Percentage of moderate anxiety: 17.80%
+Percentage of severe anxiety: 15.29%
+Percentage of extreme severe anxiety: 34.83%
+
+Percentage of normal stress: 29.55%
+Percentage of mild stress: 12.40%
+Percentage of moderate stress: 22.13%
+Percentage of severe stress: 21.55%
+Percentage of extreme severe stress: 14.37%
