@@ -1,13 +1,21 @@
-Num of male: 7709
-Num of female: 24787
-Num of other gender: 523
 
-
-## Gender ##
-Unselected - 51
 DScore: 21.588235
 AScore: 15.274510  
 SScore: 20.098039
+
+## Gender ##
+Num of male: 7709
+Num of female: 24787
+Num of other gender: 523
+Num of unknown: 51
+
+            DScore     AScore     SScore                                        
+unknown     21.59      15.27      20.10    
+male        20.45      13.22      18.61 
+female      21.27      16.58      21.86 
+other       27.37      20.53      25.30
+
+
 
 Male - 7709
 DScore: 20.448048

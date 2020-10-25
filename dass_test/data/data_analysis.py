@@ -5,6 +5,12 @@ def gender_average(df):
     gender_avg = df.groupby("gender")["DScore", "AScore", "SScore"].mean()
     gender_avg['Count'] = df.groupby("gender").size()
     print(gender_avg)
+    # female_list = df[df['gender'] == 2]
+    # print(female_list['SScore'].describe())
+    # male_list = df[df['gender'] == 1]
+    # print(male_list['SScore'].describe())
+    # other_list = df[df['gender'] == 3]
+    # print(other_list['SScore'].describe())
 
 def age_average(df):
     teen_list = df[(df['age'] <= 17) & (df['age'] >=12)]
@@ -64,32 +70,42 @@ def anxiety_severity(df):
     print("Percentage of extreme severe anxiety: " + str(ex_severe_a.size / df.size * 100) + "%")
     
 def geolocation(df):
-   # pd.set_option("display.max_rows", None, "display.max_columns", None)
+#    pd.set_option("display.max_rows", None, "display.max_columns", None)
     country_sl = df.groupby("country")["DScore", "AScore", "SScore"].mean()
     country_sl['Count'] = df.groupby("country").size()
     country_sl_sort = country_sl.sort_values(by= ['Count','DScore'], ascending=False)
-    print(country_sl_sort)
+    print(country_sl_sort.head(10))
 
 
 def education(df):
     education_l = df.groupby("education")["DScore", "AScore", "SScore"].mean()
     education_l['Count'] = df.groupby("education").size()
 
-    edl_sort = education_l.sort_values(by= ['Count','DScore'], ascending=False)
-    print(edl_sort)
+    # edl_sort = education_l.sort_values(by= ['Count','DScore'], ascending=False)
+    print(education_l)
 
 def religion(df): 
     relig_l = df.groupby("religion")["DScore", "AScore", "SScore"].mean()
     relig_l['Count'] = df.groupby("religion").size()
 
-    relig_sort = relig_l.sort_values(by= ['Count','DScore'], ascending=False)
-    print(relig_sort)
+    #relig_sort = relig_l.sort_values(by= ['Count','DScore'], ascending=False)
+    print(relig_l)
 
 def hand(df):
     hand_l = df.groupby("hand")["DScore", "AScore", "SScore"].mean()
     hand_l['Count'] = df.groupby('hand').size() 
-    hand_sort = hand_l.sort_values(by= ['Count','DScore'], ascending=False)
-    print(hand_sort)
+    # hand_sort = hand_l.sort_values(by= ['Count','DScore'], ascending=False)
+    print(hand_l)
+
+def sexual_orientation(df):
+    sexOrientation = df.groupby("orientation")["DScore", "AScore", "SScore"].mean()
+    sexOrientation['Count'] = df.groupby("orientation").size()
+    print(sexOrientation)
+
+def race(df):
+    race = df.groupby("race")["DScore", "AScore", "SScore"].mean()
+    race['Count'] = df.groupby("race").size()
+    print(race)
 
 def stress_severity(df):
     # normal stress
@@ -112,17 +128,19 @@ def stress_severity(df):
 def main():
     df = pd.read_csv('dass_test/data/cleaned_data.csv')
     
-    gender_average(df)
-    age_average(df)
+    # gender_average(df)
+    # age_average(df)
 
-    depression_severity(df)
-    anxiety_severity(df)
-    stress_severity(df)
+    # depression_severity(df)
+    # anxiety_severity(df)
+    # stress_severity(df)
 
-    geolocation(df)
-    education(df)
-    religion(df)
-    hand(df)
+    #geolocation(df)
+    # education(df)
+    #religion(df)
+    # hand(df)
+    # sexual_orientation(df)
+    race(df)
 
 
 if __name__ == '__main__':
